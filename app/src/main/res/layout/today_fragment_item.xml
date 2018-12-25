@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="运势日期:"/>
+
+        <TextView
+            android:id="@+id/datetime"
+            style="@style/constellationValue"
+            android:text="运势日期"/>
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="星座名字:"/>
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/constellationValue"
+            android:text="星座名字"/>
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="综合指数:"/>
+
+        <TextView
+            android:id="@+id/all"
+            style="@style/constellationValue"
+            android:text="综合指数"/>
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="幸运色:"/>
+
+        <TextView
+            android:id="@+id/color"
+            style="@style/constellationValue"
+            android:text="幸运色"/>
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="爱情指数:"/>
+
+        <TextView
+            android:id="@+id/love"
+            style="@style/constellationValue"
+            android:text="爱情指数"/>
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="财运指数:"/>
+
+        <TextView
+            android:id="@+id/money"
+            style="@style/constellationValue"
+            android:text="财运指数"/>
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="幸运数字:"/>
+
+        <TextView
+            android:id="@+id/number"
+            style="@style/constellationValue"
+            android:text="幸运数字"/>
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="健康指数:"/>
+
+        <TextView
+            android:id="@+id/health"
+            style="@style/constellationValue"
+            android:text="健康指数"/>
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="速配星座:"/>
+
+        <TextView
+            android:id="@+id/QFriend"
+            style="@style/constellationValue"
+            android:text="速配星座"/>
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="今日概述:"/>
+
+        <TextView
+            android:id="@+id/summary"
+            style="@style/constellationValue"
+            android:text="今日概述"/>
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="工作指数:"/>
+
+        <TextView
+            android:id="@+id/work"
+            style="@style/constellationValue"
+            android:text="工作指数"/>
+    </LinearLayout>
+</ScrollView>

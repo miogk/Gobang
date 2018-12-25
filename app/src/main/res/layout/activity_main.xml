@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.miogk.gobang.MainActivity">
+
+    <!--<GridView-->
+    <!--android:id="@+id/grid_view"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:horizontalSpacing="2dp"-->
+    <!--android:numColumns="5"-->
+    <!--android:stretchMode="columnWidth"-->
+    <!--android:verticalSpacing="2dp">-->
+    <!--</GridView>-->
+    <com.example.miogk.gobang.DrawView
+        android:id="@+id/draw_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <!--<com.example.miogk.gobang.BallGame-->
+    <!--android:id="@+id/ball_game"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"/>-->
+    <!--<com.example.miogk.gobang.MyView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"/>-->
+</LinearLayout>

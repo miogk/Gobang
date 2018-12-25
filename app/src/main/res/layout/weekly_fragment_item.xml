@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="运势日期:"/>
+
+        <TextView
+            android:id="@+id/date"
+            style="@style/constellationValue"
+            android:text="运势日期"/>
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="星座名字:"/>
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/constellationValue"
+            android:text="星座名字"/>
+
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="周数:"/>
+
+        <TextView
+            android:id="@+id/weekth"
+            style="@style/constellationValue"
+            android:text="周数"/>
+
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="爱情指数:"/>
+
+        <TextView
+            android:id="@+id/love"
+            style="@style/constellationValue"
+            android:text="爱情指数"/>
+
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="财运指数:"/>
+
+        <TextView
+            android:id="@+id/money"
+            style="@style/constellationValue"
+            android:text="财运指数"/>
+
+        <!--<TableRow>-->
+
+        <!--<TextView-->
+        <!--style="@style/constellation"-->
+        <!--android:text="健康指数:"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/health"-->
+        <!--style="@style/constellation"-->
+        <!--android:text="健康指数"/>-->
+        <!--</TableRow>-->
+
+
+        <TextView
+            style="@style/constellationKey"
+            android:text="工作指数:"/>
+
+        <TextView
+            android:id="@+id/work"
+            style="@style/constellationValue"
+            android:text="工作指数"/>
+    </LinearLayout>
+</ScrollView>

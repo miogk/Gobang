@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">十二星座运势</string>
+    <string name="normalTextRes">Butter Doesn\'t fly!</string>
+    <string name="subNormalTextRes">Little butter Doesn\'t fly, either!</string>
+    <string name="today">今日运势</string>
+    <string name="tomorrow">明日运势</string>
+    <string name="week">本周运势</string>
+    <string name="month">本月运势</string>
+    <string name="year">今年运势</string>
+</resources>

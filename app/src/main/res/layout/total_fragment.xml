@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:fitsSystemWindows="true"
+              android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:minHeight="?attr/actionBarSize"/>
+    <!--<include layout="@layout/title_layout"/>-->
+
+    <FrameLayout
+        android:id="@+id/total_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.example.miogk.gobang.MyViewPager
+            android:id="@+id/total_fragment_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_button_home"
+                style="@style/radioButton"
+                android:checked="true"
+                android:drawableTop="@drawable/change_home_drawable_top"
+                android:text="首页"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_baike"
+                style="@style/radioButton"
+                android:drawableTop="@drawable/change_baike_drawable_top"
+                android:text="百科"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_video"
+                style="@style/radioButton"
+                android:drawableTop="@drawable/change_video_drawable_top"
+                android:text="视频"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_setting"
+                style="@style/radioButton"
+                android:drawableTop="@drawable/change_setting_drawable_top"
+                android:text="设置"/>
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>
