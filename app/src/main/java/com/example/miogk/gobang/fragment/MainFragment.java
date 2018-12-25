@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.miogk.gobang.DataService;
 import com.example.miogk.gobang.R;
+import com.example.miogk.gobang.domain.ConstellationMonth;
 import com.example.miogk.gobang.domain.ConstellationPicture;
 import com.example.miogk.gobang.domain.ConstellationToday;
 import com.example.miogk.gobang.domain.ConstellationWeekly;
@@ -73,8 +74,6 @@ public class MainFragment extends Fragment {
         init2(rootView);
         initFragment(rootView);
         return view;
-        // setUserVisiableHint
-        // onCreateView
     }
 
     @Override
@@ -188,6 +187,11 @@ public class MainFragment extends Fragment {
 //                            }
                             break;
                         case 3:
+                            dialog = new ProgressDialog(getActivity());
+                            dialog.setTitle("正在加载...");
+                            dialog.setMessage("正在加载Message.....");
+                            dialog.setCanceledOnTouchOutside(false);
+                            dialog.show();
                             runWithRetrofit(constellationName, MyUtils.MONTH);
                             break;
                         case 4:
@@ -411,6 +415,29 @@ public class MainFragment extends Fragment {
                 });
                 break;
             case MyUtils.MONTH:
+                Call<ConstellationMonth> constellationMonth = dataService.getConstellationMonth(xingzuoName, day, key);
+                constellationMonth.enqueue(new Callback<ConstellationMonth>() {
+                    @Override
+                    public void onResponse(Call<ConstellationMonth> call, retrofit2.Response<ConstellationMonth> response) {
+                        ConstellationMonth constellationMonth = response.body();
+                        Gson gson = new Gson();
+                        String json = gson.toJson(constellationMonth);
+                        MyUtils.putInSharedPreferences(getActivity(), xingzuoName + MyUtils.MONTH, json);
+                        FragmentTransaction trasaction = manager.beginTransaction();
+                        MonthFragment monthFragment = new MonthFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("constellationMonth", constellationMonth);
+                        monthFragment.setArguments(bundle);
+                        trasaction.replace(R.id.contellation_fragment, monthFragment, MyUtils.DEFAULT);
+//                        trasaction.addToBackStack(null);
+                        trasaction.commit();
+                    }
+
+                    @Override
+                    public void onFailure(Call<ConstellationMonth> call, Throwable t) {
+                        t.printStackTrace();
+                    }
+                });
                 break;
             case MyUtils.YEAR:
                 Call<ConstellationYear> constellationYear = dataService.getConstellationYear(xingzuoName, day, key);

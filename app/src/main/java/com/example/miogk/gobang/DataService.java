@@ -1,6 +1,7 @@
 package com.example.miogk.gobang;
 
 import com.example.miogk.gobang.domain.ConstellationBase;
+import com.example.miogk.gobang.domain.ConstellationMonth;
 import com.example.miogk.gobang.domain.ConstellationToday;
 import com.example.miogk.gobang.domain.ConstellationWeekly;
 import com.example.miogk.gobang.domain.ConstellationYear;
@@ -28,6 +29,9 @@ public interface DataService {
 
     @GET("constellation/getAll")
     Call<ConstellationYear> getConstellationYear(@Query("consName") String consName, @Query("type") String type, @Query("key") String key);
+
+    @GET("constellation/getAll")
+    Call<ConstellationMonth> getConstellationMonth(@Query("consName") String consName, @Query("type") String type, @Query("key") String key);
 
 
     @GET("HPImageArchive.aspx")
