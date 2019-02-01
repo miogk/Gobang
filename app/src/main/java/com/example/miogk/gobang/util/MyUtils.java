@@ -5,7 +5,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Color;
+import android.icu.util.ChineseCalendar;
 import android.os.Build;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,8 +17,12 @@ import android.widget.Toast;
 
 import com.example.miogk.gobang.R;
 
+import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Calendar;
 
 /**
  * Created by Administrator on 2018/12/9.
@@ -29,6 +37,9 @@ public class MyUtils {
     public static final String DEFAULT = "default";
     private static SQLiteOpenHelper liteOpenHelper;
     private static SQLiteDatabase sqLiteDatabase;
+    private static Calendar calendar = Calendar.getInstance();
+    private static final String TAG = "MyUtils";
+
 
 
     public static void Toast(Context context, String text) {
@@ -38,7 +49,8 @@ public class MyUtils {
     public static void statusBarBackgroundColor(Window window, Activity activity, int color) {
         Window w = activity.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(activity.getResources().getColor(color, null));
+//        window.setStatusBarColor(activity.getResources().getColor(color, null));
+        window.setStatusBarColor(activity.getResources().getColor(color));
     }
 
     public static String getFromSharedPreferences(Context context, String key) {
@@ -150,5 +162,40 @@ public class MyUtils {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
+    }
+
+    public static File getDiskCacheDir(Context context, String name) {
+        String cachePath;
+        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) || !Environment.isExternalStorageRemovable()) {
+            cachePath = context.getExternalCacheDir().getPath();
+        } else {
+            cachePath = context.getCacheDir().getPath();
+        }
+        return new File(cachePath + File.separator + name);
+    }
+
+    public static String hashKeyForDisk(String key) {
+        String cacheKey;
+        try {
+            final MessageDigest mDigest = MessageDigest.getInstance("MD5");
+            mDigest.update(key.getBytes());
+            cacheKey = bytesToHexString(mDigest.digest());
+        } catch (NoSuchAlgorithmException e) {
+            cacheKey = String.valueOf(key.hashCode());
+        }
+        return cacheKey;
+    }
+
+    private static String bytesToHexString(byte[] bytes) {
+        // http://stackoverflow.com/questions/332079
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < bytes.length; i++) {
+            String hex = Integer.toHexString(0xFF & bytes[i]);
+            if (hex.length() == 1) {
+                sb.append('0');
+            }
+            sb.append(hex);
+        }
+        return sb.toString();
     }
 }

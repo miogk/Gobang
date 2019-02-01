@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/content"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:fitsSystemWindows="true"
               android:orientation="vertical">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/tool_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#ffffff"
-        android:gravity="center"
-        android:minHeight="?attr/actionBarSize"/>
-    <!--<include layout="@layout/title_layout"/>-->
 
     <FrameLayout
         android:id="@+id/total_fragment"
@@ -61,6 +53,18 @@
                 style="@style/radioButton"
                 android:drawableTop="@drawable/change_setting_drawable_top"
                 android:text="设置"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_gesture"
+                style="@style/radioButton"
+                android:drawableTop="@drawable/change_gesture_drawable_top"
+                android:text="手势"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_rxjava"
+                style="@style/radioButton"
+                android:drawableTop="@drawable/change_gesture_drawable_top"
+                android:text="RxJava"/>
         </RadioGroup>
     </LinearLayout>
 </LinearLayout>

@@ -1,53 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/open"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Open Camera"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/goto_my_camera"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="goto_my_camera"/>
+        <!--<include layout="@layout/title_layout"/>-->
 
-    <ImageView
-        android:id="@+id/image_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="5dp"
-        android:layout_weight="1"
-        android:src="@drawable/a1"/>
+        <Button
+            android:id="@+id/open"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open Camera"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#bebebe"
-        android:gravity="center"
-        android:text="赞赏支持"
-        android:textSize="30sp"/>
+        <Button
+            android:id="@+id/goto_my_camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="goto_my_camera"/>
 
-    <Button
-        android:id="@+id/start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="startService"/>
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:src="@drawable/a1"/>
 
-    <Button
-        android:id="@+id/stop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="stopService"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#bebebe"
+            android:gravity="center"
+            android:text="赞赏支持"
+            android:textSize="30sp"/>
 
-    <Button
-        android:id="@+id/play"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="播放"/>
-</LinearLayout>
+        <Button
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="startService"/>
+
+        <Button
+            android:id="@+id/stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="stopService"/>
+
+        <Button
+            android:id="@+id/play"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="播放"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/disk_cache_size"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="132456"
+                android:textColor="#000"
+                android:textSize="24sp"/>
+
+            <Button
+                android:id="@+id/remove_disk_cache"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="清除缓存"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/change"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="change"/>
+
+        <Button
+            android:id="@+id/retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Retrofir"/>
+
+        <Button
+            android:id="@+id/rxJava"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RxJava"/>
+
+        <Button
+            android:id="@+id/butterknife"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Butterknife"/>
+    </LinearLayout>
+</ScrollView>
